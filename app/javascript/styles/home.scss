@@ -1,0 +1,172 @@
+$dark_gray: #3C3C3C;
+$light_gray: #DFDFDF;
+$font_white: #fff;
+
+.body_wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(95, 95, 95);
+    background-image: url(/assets/blackwallstreet.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.nav{
+    padding-top: 20px;
+}
+.container{
+    width: 100vw;
+    height: 100%;
+    max-width: 1500px;
+    margin:  auto;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: .7fr 6fr .3fr;
+    padding: 0 20px;
+    position: relative;
+}
+
+.navbar{
+    //background-color: chocolate;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+
+    
+
+    .site_logo{
+        align-self: center;
+    } 
+    .site_menu{
+    //background-color: red;
+    align-self: center;
+    justify-content: space-around;
+    display: flex;
+    gap: 20px;
+
+    }
+} 
+.search_area{
+    margin-top: 3px;
+    padding-top: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+} 
+
+.quick_links{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.copy_right{
+    //background-color: darkgrey;
+    height: 100%;
+    text-align: center;
+}
+
+// Headings
+h1.title{
+    font-size: 1.5rem;
+    text-shadow: 1px 1px rgb(168, 168, 168);
+}
+
+// INPUTS
+
+input[type="text" ]{
+    
+}
+
+// Links
+a.frontpage{
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+
+
+}
+
+input.search_box{
+    width: 80vw;
+    height: 3rem;
+    border-radius: 100px;
+    border: 1px solid $dark_gray;
+    padding-left: 15px;
+    color: $dark_gray;
+&::before{
+    content: "one";
+}
+}
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $dark_gray;
+    opacity: 1;
+    position: absolute;
+    left: 70px;
+    top: 0px;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color:$dark_gray;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $dark_gray;
+}
+
+
+@media screen and (min-width: 500px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+    }
+
+     input.search_box {
+         width: 50vw;
+         height: 3rem;
+        
+     }
+     .quick_links {
+         gap: 14px;
+     }
+}
+
+@media screen and (min-width: 1280px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+    }
+
+    h1.title {
+        font-size: 3rem;
+    }
+
+    input.search_box {
+        width: 35vw;
+        height: 3.5rem;
+        
+    }
+
+    .search_area {
+        //background-color: crimson;
+        gap: 25px;
+    }
+
+    .quick_links {
+        gap: 16px;
+    }
+}
