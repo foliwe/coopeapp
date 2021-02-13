@@ -53,7 +53,7 @@ Rails.application.configure do
   # information to avoid inadvertent exposure of personally identifiable information (PII).
   config.log_level = :info
   # for assets compile
-  #config.assets.compile = true
+  config.assets.compile = true
   config.assets.digest = true
 
   # Prepend all log lines with the following tags.

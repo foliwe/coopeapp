@@ -1,6 +1,6 @@
 $dark_gray: #3C3C3C;
 $light_gray: #DFDFDF;
-$font_white: #fff;
+
 
 *{
     margin: 0;
@@ -8,10 +8,16 @@ $font_white: #fff;
     box-sizing: border-box;
     font-family: 'Montserrat',sans-serif;
     font-size: 13px;
-    color: $font_white;
+   
 
 }
 
+.padding_xs{
+    padding: 10px;
+}
+.bg_gray{
+    background-color: #909090;
+}
 body ,html {
     height: 100vh
 }

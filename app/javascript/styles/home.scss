@@ -1,6 +1,5 @@
 $dark_gray: #3C3C3C;
 $light_gray: #DFDFDF;
-$font_white: #fff;
 
 .body_wrapper{
     width: 100%;
@@ -9,6 +8,7 @@ $font_white: #fff;
     background-image: url(/assets/blackwallstreet.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    color: #fff;
 }
 
 section.nav{
@@ -88,6 +88,7 @@ a.frontpage{
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
+    color: #fff;
 
 
 }
@@ -107,7 +108,7 @@ input.search_box{
     border: 1px solid $dark_gray;
     padding-left: 15px;
     color: $dark_gray;
-    background-color: $font_white;
+    background-color: #fff;
 &::before{
     content: "one";
 }
