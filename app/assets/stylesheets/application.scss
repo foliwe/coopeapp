@@ -1,5 +1,6 @@
 $dark_gray: #3C3C3C;
-$light_gray: #DFDFDF;
+$light_gray: #dddddd;
+$bg_color: #ffffff;
 
 
 *{
@@ -8,15 +9,22 @@ $light_gray: #DFDFDF;
     box-sizing: border-box;
     font-family: 'Montserrat',sans-serif;
     font-size: 13px;
+    //background-color: $light_gray;
    
 
 }
 
+
+.business_main{
+ background-color: $bg_color; 
+ 
+
+}
 .padding_xs{
     padding: 10px;
 }
 .bg_gray{
-    background-color: #909090;
+    background-color: $light_gray
 }
 body ,html {
     height: 100vh

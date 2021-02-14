@@ -1,0 +1,20 @@
+<section class="business_main">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @business.name %>
+</p>
+<p>
+  <strong>Number of employee:</strong>
+  <%= @business.number_of_employee %>
+</p>
+
+<p>
+  <strong>Accepts partnership:</strong>
+  <%= @business.accepts_partnership %>
+</p>
+
+<%= link_to 'Edit', edit_business_path(@business) %> |
+<%= link_to 'Back', businesses_path %>
+</section>

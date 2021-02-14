@@ -14,6 +14,26 @@ $light_gray: #DFDFDF;
 section.nav{
     padding-top: 20px;
 }
+
+.nav_link {
+    color: red;
+}
+
+section.login_main {
+    
+    //background-color: brown;
+    display: grid;
+    grid-template-columns: 1fr;
+   place-items: center;
+}
+
+.login_form{
+    width: 60%;
+    border: 1px solid black;
+    //background-color: crimson;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
 .container{
     width: 100vw;
     height: 100%;
@@ -48,6 +68,7 @@ section.nav{
     }
 } 
 .search_area{
+    //background-color: aqua;
     margin-top: 3px;
     padding-top: 150px;
     height: 100%;
@@ -66,7 +87,7 @@ section.nav{
 }
 
 .copy_right{
-    //background-color: darkgrey;
+    background-color: darkgrey;
     height: 100%;
     text-align: center;
 }
@@ -89,10 +110,16 @@ a.frontpage{
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
+   
 
 
 }
-
+.nav_link {
+   color: $dark_gray;
+   text-decoration: none;
+   font-weight: 700;
+   text-transform: uppercase;
+}
 .no_mobile{
     display: none;
 }
