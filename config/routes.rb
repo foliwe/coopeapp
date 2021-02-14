@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  require 'sidekiq/web'
   resources :businesses
   devise_for :users
   root to: 'home#index'
