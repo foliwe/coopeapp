@@ -1,11 +1,11 @@
     <section class="business_main">
 
       <%= search_form_for @q do |f| %>
-        <%= f.label :name_cont,"Search Business" %>
+        <%= f.select :continent_id_eq, options_from_collection_for_select(Continent.all.order(:name), :id, :name, @q.continent_id_eq), { }, {class: ''} %>
         <%= f.search_field :name_cont %>
         <div class="">
-        <%= f.check_box :accepts_partnership_true %>
-        <%= f.label :accepts_partnership_true, "Accepts Partnership" %>
+        <%#= f.check_box :accepts_partnership_true %>
+        <%#= f.label :accepts_partnership_true, "Accepts Partnership" %>
       
        
         </div>

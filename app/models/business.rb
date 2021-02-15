@@ -1,3 +1,4 @@
 class Business < ApplicationRecord
-    belongs_to :continent
+    has_many :locations
+    has_many :continent, through: :locations
 end
