@@ -1,4 +1,4 @@
 class Business < ApplicationRecord
-    has_many :locations
-    has_many :continent, through: :locations
+    has_many :business_locations
+    has_many :countries, through: :business_locations
 end
