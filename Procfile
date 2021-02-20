@@ -1,2 +1,1 @@
-web: bin/run-prod.sh
-worker: bin/run-worker.sh
+web: bundle exec rails server -p $PORT
