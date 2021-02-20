@@ -11,6 +11,7 @@ class AfterSignupController < ApplicationController
        
         case steps
             when :terms
+                
             when :privacy
         end
 
