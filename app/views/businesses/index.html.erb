@@ -33,7 +33,7 @@
                 <tr>
                   <td><%= link_to business.business_name ,business %></td>
                   <td><%= business.business_email %></td>
-                  <td><%= business.accepts_partnership ? "Yes" : "No" %></td>
+                  <td><%= human_boolean(business.accepts_partnership)  %></td>
                 </tr>
               <% end %>
             </tbody>
