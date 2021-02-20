@@ -1,3 +1,4 @@
+require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -5,28 +6,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Continent.destroy_all 
-Business.destroy_all
-Country.destroy_all
+20.times do 
+    Category.create!(name: Faker::Company.industry)
+end
+ puts "20 Categories created"
 
-cna = Continent.create!(name: "North America")
-csa = Continent.create!(name: "South America")
-ceu = Continent.create!(name: "Europe")
-caf = Continent.create!(name: "Africa")
+ puts "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-puts "4 Continent Created"
+foli= User.create!(fullname: Faker::Name.name, email: "foliwe@example.com",password: 'password')
+akuma=User.create!(fullname: Faker::Name.name, email: "akuma@example.com",password: 'password')
+pattrick=User.create!(fullname: Faker::Name.name, email: "patrick@example.com",password: 'password')
 
-ctna= Country.create!(name: "Usa" )
-ctsa = Country.create!(name: "Brasil" )
-cteu =Country.create!(name: "Germany" )
-ctaf = Country.create!(name: "Nigeria" )
-puts "4 Countries Created"
+puts "3 users created"
+puts "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-bna= Business.create!(name: "Business North America")
-bsa = Business.create!(name: "Business South America")
-beu =Business.create!(name: "Business Europe")
-baf = Business.create!(name: "Business frica")
-
-puts "4 Business Created"
-
-
+9.times do 
+    Business.create!(business_name: Faker::Company.name,user_id: rand(1...4),number_of_employee:rand(1...101),category_id:rand(1...21),accepts_partnership: rand(2),business_email: Faker::Internet.email)
+end
+puts "9 Bisinesses created"

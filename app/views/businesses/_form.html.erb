@@ -16,8 +16,8 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.label :business_name %>
+      <%= form.text_field :business_name %>
     </div>
     <div class="field">
       <%= form.label :number_of_employee %>
@@ -28,6 +28,41 @@
       <%= form.label :accepts_partnership %>
       <%= form.check_box :accepts_partnership %>
     </div>
+       <div class="">
+       
+       <%= form.collection_select :category_id , Category.all, :id, :name %>
+                              
+       </div>
+       <h2>Contacts</h2>
+      <p>
+      
+      <div class="field">
+        <%= form.label :business_address %>
+        <%= form.text_field :business_address %>
+     </div>
+
+      <div class="field">
+        <%= form.label :zip_code%>
+        <%= form.text_field :zip_code %>
+     </div>
+
+     <div class="field">
+        <%= form.label :business_email%>
+        <%= form.email_field :email %>
+     </div>
+
+     <div class="field">
+        <%= form.label :phone%>
+        <%= form.text_field :phone %>
+     </div>
+
+     <div class="field">
+        <%= form.label :mobile%>
+        <%= form.text_field :mobile %>
+     </div>
+      
+      </p>  
+
 
     <div class="actions">
       <%= form.submit %>

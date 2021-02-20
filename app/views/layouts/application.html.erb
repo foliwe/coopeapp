@@ -26,10 +26,12 @@
                   </div>
                   <div class="site_menu">
                     <% if user_signed_in? %>
+                      <span class="nav_link no_mobile"><%=current_user.fullname%></span>
                       <%= link_to 'Logout', destroy_user_session_path,method: :delete,class:"no_mobile nav_link"%>
                        <% else %>
-                      <a href="" class=" no_mobile nav_link">Login</a>
-                      <a href="" class=" no_mobile nav_link">Register A Business</a>
+                       <%= link_to 'Login', new_user_session_path,class:"nav_link no_mobile"%>
+                       <%= link_to 'Register A Business', new_user_registration_path,class:"nav_link no_mobile"%>
+                       
                     <% end %>
                       <span class="only_mobile"><a href="" class=" "><i class="fas fa-bars fa-2x"></i></a></span>
                   </div>

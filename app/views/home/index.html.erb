@@ -7,7 +7,7 @@
                     <%#= search_form_for @q do |f| %>
                     <%= search_form_for @q, url: businesses_path , method: :get do |f| %>
                      <!--input type="text" class="search_box" placeholder="search for a business"-->
-                    <%= f.search_field :name_cont ,class:"search_box" ,placeholder:"search for a business"%>
+                    <%= f.search_field :business_type_cont ,class:"search_box" ,placeholder:"search for a business"%>
                    
                    
                 </div>

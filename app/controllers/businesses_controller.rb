@@ -1,11 +1,15 @@
 class BusinessesController < ApplicationController
+
+  before_action :authenticate_user! , except: [:index ,:show]
   before_action :set_business, only: %i[ show edit update destroy ]
+
 
   # GET /businesses or /businesses.json
   def index
     #@businesses = Business.all
     @q = Business.ransack(params[:q])
     @business = @q.result(distinct: true)
+  
   end
 
   # GET /businesses/1 or /businesses/1.json
@@ -14,7 +18,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses/new
   def new
-    @business = Business.new
+    @business = current_user.businesses.new
   end
 
   # GET /businesses/1/edit
@@ -23,7 +27,7 @@ class BusinessesController < ApplicationController
 
   # POST /businesses or /businesses.json
   def create
-    @business = Business.new(business_params)
+    @business = current_user.businesses.build(business_params)
 
     respond_to do |format|
       if @business.save
@@ -66,6 +70,8 @@ class BusinessesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def business_params
-      params.require(:business).permit(:name, :address, :number_of_employee, :accepts_partnership)
+      params.require(:business).permit(:business_name,:accepts_partnership,:address,:number_of_employee,:business_address,:mobile, :phone, :business_email, :zip_code,:category_id )
     end
 end
+
+ 
