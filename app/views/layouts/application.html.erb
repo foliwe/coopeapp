@@ -26,7 +26,7 @@
                   </div>
                   <div class="site_menu">
                     <% if user_signed_in? %>
-                      <span class="nav_link no_mobile">hello</span>
+                      <span class="nav_link no_mobile"><%=current_user.fullname%></span>
                       <%= link_to 'Logout', destroy_user_session_path,method: :delete,class:"no_mobile nav_link"%>
                        <% else %>
                        <%= link_to 'Login', new_user_session_path,class:"nav_link no_mobile"%>
