@@ -11,10 +11,22 @@
 </p>
 
 <p>
+  <strong>About Business:</strong>
+  <%= @business.description %>
+</p>
+
+<p>
   <strong>Accepts partnership:</strong>
   <%= human_boolean(@business.accepts_partnership)%>
 </p>
-
+ <p>
+ <div class="">
+ 
+  <% @business.photos.each do |photo|%>
+    <%=image_tag photo%>
+  <%end%>
+ </p>
+ </div>
 <%= link_to 'Edit', edit_business_path(@business) %> |
 <%= link_to 'Back', businesses_path %>
 </section>
