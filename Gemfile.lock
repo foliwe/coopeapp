@@ -95,6 +95,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.8)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.1)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     listen (3.4.1)
@@ -109,6 +112,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
     mimemagic (0.3.5)
+    mini_magick (4.11.0)
     mini_mime (1.0.2)
     minitest (5.14.3)
     msgpack (1.4.2)
@@ -172,6 +176,8 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    ruby-vips (2.0.17)
+      ffi (~> 1.9)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -213,7 +219,6 @@ GEM
       tzinfo (>= 1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    wdm (0.1.1)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -247,6 +252,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   faker
+  image_processing
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
@@ -261,14 +267,13 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
-  wdm (>= 0.1.0)
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
   wicked
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 3.0.0p0
 
 BUNDLED WITH
    2.2.11
