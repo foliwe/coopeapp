@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'ransack'
 gem 'wicked'
+gem 'image_processing'
 gem 'sidekiq', '~> 5.2.5'
 gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
