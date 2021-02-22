@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '2.7.2'
 
 gem 'rails', '~> 6.1.1'
 gem 'pg', '~> 1.1'
@@ -16,6 +16,8 @@ gem 'wicked'
 gem 'sidekiq', '~> 5.2.5'
 gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
