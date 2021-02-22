@@ -30,6 +30,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'faker'
+  gem 'ruby-progressbar'
 end
 
 group :test do

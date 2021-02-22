@@ -53,7 +53,7 @@
 
      <div class="field">
         <%= form.label :business_email%>
-        <%= form.email_field :email %>
+        <%= form.email_field :business_email %>
      </div>
 
      <div class="field">
@@ -67,10 +67,10 @@
      </div>
       
       </p>  
-
+      
         <div class="field">
          <%= form.label :photos %>
-         <%= form.file_field :photos,multiple: true %>
+         <%= form.file_field :photos, direct_upload: true, multiple: true %>
         </div>
     <div class="actions">
       <%= form.submit %>
