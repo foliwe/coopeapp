@@ -35,7 +35,7 @@
    <%end%>
  </p>
  </div>
-<%= link_to 'Edit', edit_business_path(@business) %> |
+<%if can? :update, @business%><%= link_to 'Edit', edit_business_path(@business) %> <%end%>|
 <%= link_to 'Back', businesses_path %>
 </section>
 
