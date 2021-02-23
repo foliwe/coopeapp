@@ -41,6 +41,6 @@
 
           <br>
 
-          <%= link_to 'New Business', new_business_path %>
+         <%if can? :update, @business%> <%= link_to 'New Business', new_business_path %><%end%>
     </section>
 
