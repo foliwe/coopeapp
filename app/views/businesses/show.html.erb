@@ -32,10 +32,11 @@
       <%else%>
       <%=link_to photo.filename, rails_blob_path(photo, disposition: :attachment)%>
     <%end%>
-<%= link_to 'Remove', business_photo_remove_path(@business , photo), method: :delete, data: { confirm: 'Are you sure?' } %>                
+<%if can? :update, @business%><%= link_to 'Remove', business_photo_remove_path(@business , photo), method: :delete, data: { confirm: 'Are you sure?' } %> <%end%>              
    <%end%>
  </p>
  </div>
+ <%if can? :update, @business%><%= link_to 'Delete', @business, method: :delete, data: { confirm: 'Are you sure?' } %> <%end%>
 <%if can? :update, @business%><%= link_to 'Edit', edit_business_path(@business) %> <%end%>|
 <%= link_to 'Back', businesses_path %>
 </section>
