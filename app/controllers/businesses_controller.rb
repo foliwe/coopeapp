@@ -66,7 +66,16 @@ class BusinessesController < ApplicationController
     end
   end
 
+
+    def remove
+        @business = Business.find(params[:business_id])
+        @photo = @business.photos.find(params[:photo_id])
+        @photo.purge_later
+
+        redirect_to business_path(@business), notice: "Photo was successfully removed."
+    end
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_business
       @business = Business.find(params[:id])

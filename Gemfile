@@ -15,6 +15,7 @@ gem 'ransack'
 gem 'wicked'
 gem 'cancancan'
 gem 'image_processing'
+gem 'aws-sdk-s3', require:false
 gem 'sidekiq', '~> 5.2.5'
 gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
