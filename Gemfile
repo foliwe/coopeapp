@@ -14,6 +14,7 @@ gem 'devise'
 gem 'ransack'
 gem 'wicked'
 gem 'cancancan'
+gem 'rack-cors'
 gem 'image_processing'
 gem 'aws-sdk-s3', require:false
 gem 'sidekiq', '~> 5.2.5'
