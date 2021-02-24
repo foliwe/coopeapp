@@ -9,26 +9,23 @@ $bg_color: #ffffff;
     box-sizing: border-box;
     font-family: 'Montserrat',sans-serif;
     font-size: 13px;
-    //background-color: $light_gray;
+   
    
 
 }
+body, html{
+    background-color: $light_gray;
+     height: 100%;
+     
+}
 
 
-.business_main{
- background-color: $bg_color; 
- 
 
+.bg_white{
+    background-color: #ffffff;
 }
-.padding_xs{
-    padding: 10px;
-}
-.bg_gray{
-    background-color: $light_gray
-}
-body ,html {
-    height: 100vh
-}
+
+   
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&family=Montserrat:wght@200;400;600;700&display=swap');
 

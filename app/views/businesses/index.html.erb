@@ -1,46 +1,57 @@
     <section class="business_main">
 
-      <%= search_form_for @q do |f| %>
-        
-        <%= f.search_field :business_type_cont %>
-        <div class="">
-      
-       
-        </div>
-        <%= f.submit %>
-      <% end %>
-      <div class="">
-        <p>
-          <h1>(<%=@business.count%>) Business Found</h1> 
-        </p>
-      </div>
-        <hr>
-          <p id="notice"><%= notice %></p>
-
-          <h1>Businesses</h1>
-
-          <table>
-            <thead>
-              <tr>
-                <th> Business Name</th>
-                <th> Business Email</th>
-                <th> Accepts Partnership</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <% @business.each do |business| %>
-                <tr>
-                  <td><%= link_to business.business_name ,business %></td>
-                  <td><%= business.business_email %></td>
-                  <td><%= human_boolean(business.accepts_partnership)  %></td>
-                </tr>
+        <section class="advanced_search bg_white">
+          <div class="">
+          
+              <%= search_form_for @q do |f| %>
+                
+                <%= f.search_field :business_type_cont %>
+                <div class="">
+              
+              
+                </div>
+                <%= f.submit %>
               <% end %>
-            </tbody>
-          </table>
+            
+              <p>
+                <h1>(<%=@business.count%>) Business Found</h1> 
+              </p>
+          
+          </div>
+        </section>
+        
+        <section class="card bg_white padding-sm">
+          <% @business.each do |business| %>
+              <div class="business_card">
+                <div class="business_card_thumbnail">
+                    <%= image_tag(business.photos[0].variant(resize_to_limit: [150, 150])) if business.photos.present?%>
+                </div>
+                <div class="business_card_details">
+                    <span class="buisiness_name">
+                        <%= link_to business.business_name ,business %>
+                    </span>
+                    <span class="buisiness_email">
+                      <%= business.business_email %>
+                    </span>
+                    <span class="buisiness_partnership">
+                       <%= human_boolean(business.accepts_partnership)  %>
+                    </span>
+                </div>
+              </div>
+           <% end %>
+        </section>
 
-          <br>
+            
+              
+              
+              
+                
+                
+                
+                
+             
+         
 
-         <%if can? :update, @business%> <%= link_to 'New Business', new_business_path %><%end%>
+         
     </section>
 

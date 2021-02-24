@@ -4,19 +4,70 @@ $light_gray: #DFDFDF;
 .body_wrapper{
     width: 100%;
     height: 100%;
-    background-color: rgb(95, 95, 95);
     background-image: url(/assets/blackwallstreet.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
 }
 
-section.nav{
-    padding-top: 20px;
+section.nav {
+    background-color: white;
+     width: 100vw;
+     border-bottom: 1px solid #909090;
 }
 
+section.main{
+    width: 100vw;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 60px;
+}
 .nav_link {
     color: red;
+}
+
+
+.business_main {
+    //background-color: $light_gray; 
+
+
+}
+section.business_main{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    grid-template-rows: 2fr 7fr;
+    row-gap: 10px;
+}
+section.advanced_search{
+    //background-color: rgb(4, 116, 110);
+    display: grid;
+    place-content: center;
+    
+}
+section.card{
+    //background-color: coral;
+    //border: 2px solid rgb(0, 4, 238);
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 100%;
+
+    
+}
+.business_card{
+    //background-color: #40ca00;
+    display: grid;
+    //border: 2px solid rgb(238, 0, 0);
+    width: 100%;
+    grid-template-columns: repeat(2,1fr );
+}
+
+.business_card_details{
+    display: flex;
+    //border: 2px solid black;
+    flex-direction: column;
+    width: 100%;
 }
 
 section.login_main {
@@ -35,14 +86,10 @@ section.login_main {
     grid-template-columns: 1fr 2fr;
 }
 .container{
-    width: 100vw;
-    height: 100%;
-    max-width: 1500px;
-    margin:  auto;
     display: grid;
     place-content: center;
     grid-template-columns: 1fr;
-    grid-template-rows: .7fr 6fr .3fr;
+    grid-template-rows: auto 6fr .3fr;
     padding: 0 20px;
     position: relative;
 }
@@ -50,8 +97,9 @@ section.login_main {
 .navbar{
     //background-color: chocolate;
     display: flex;
-    height: 100%;
     justify-content: space-between;
+     max-width: 1400px;
+     margin: auto;
 
     
 
@@ -71,11 +119,11 @@ section.login_main {
     //background-color: aqua;
     margin-top: 3px;
     padding-top: 150px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    //background-color: aqua;
     gap:10px;
 } 
 
@@ -183,6 +231,9 @@ input.search_box{
      }
 }
 
+.padding-sm{
+    padding: 70px;
+}
 @media screen and (min-width: 1280px) {
     * {
         margin: 0;
