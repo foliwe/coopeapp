@@ -32,12 +32,16 @@ section.main{
 
 
 }
-section.business_main{
+section.index{
     display: grid;
     grid-template-columns: 1fr;
     
     grid-template-rows: 2fr 7fr;
     row-gap: 10px;
+}
+
+section.business_show{
+    background-color: #fff;
 }
 section.advanced_search{
     //background-color: rgb(4, 116, 110);
