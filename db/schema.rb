@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_010448) do
+ActiveRecord::Schema.define(version: 2021_02_26_160955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 2021_02_22_010448) do
     t.string "business_type"
     t.integer "number_of_employee"
     t.boolean "accepts_partnership"
-    t.boolean "active"
-    t.boolean "verified"
+    t.boolean "active", default: true
+    t.boolean "verified", default: false
     t.string "zip_code"
     t.string "business_email"
     t.string "phone"

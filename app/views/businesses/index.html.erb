@@ -1,4 +1,4 @@
-    <section class="index">
+    <section class="index limits">
 
         <section class="advanced_search bg_white">
           <div class="">
@@ -20,38 +20,36 @@
           </div>
         </section>
         
-        <section class="card bg_white padding-sm">
+        <section class="card  ">
           <% @business.each do |business| %>
-              <div class="business_card">
+              <div class="business_card bg_white">
                 <div class="business_card_thumbnail">
-                    <%= image_tag(business.photos[0].variant(resize_to_limit: [150, 150])) if business.photos.present?%>
+                    <%= image_tag(business.photos[0].variant(resize_to_fill: [300, 200])) if business.photos.present?%>
                 </div>
                 <div class="business_card_details">
+                    <div class="location">
+                      <div class="continent">Continent</div>
+                      <div class="country">Country</div>
+                      <div class="city">City</div>
+                    </div>
                     <span class="buisiness_name">
-                        <%= link_to business.business_name ,business %>
+                      <h4><%= link_to business.business_name ,business %></h4> 
                     </span>
                     <span class="buisiness_email">
-                      <%= business.business_email %>
+                   <%= business.category.name %>
                     </span>
                     <span class="buisiness_partnership">
-                       <%= human_boolean(business.accepts_partnership)  %>
+                        
+                       <span class=" flex_item2 <%= business.accepts_partnership ? 'bg-success' : 'bg-danger' %>"><%= business.accepts_partnership ? 'Partnership': 'No Partnership'%></span> 
+                    </span>
+                    <span class="buisiness_verified">
+                       <span class=" flex_item3  <%= business.verified ? 'bg-verified' : 'bg-not-verified' %>"><%= business.verified ? 'Verified' : 'Not Verified' %></span> 
                     </span>
                 </div>
               </div>
+                
            <% end %>
         </section>
-
-            
-              
-              
-              
-                
-                
-                
-                
-             
-         
-
-         
+    
     </section>
 

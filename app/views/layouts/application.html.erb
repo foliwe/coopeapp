@@ -15,7 +15,7 @@
   <body>
   <div class="container">
       <section class="nav">
-              <div class="navbar bg_white ">
+              <div class="navbar bg_white limits">
                   <div class="site_logo bg_white">
                     <%= link_to root_path do%>
                       <svg width="89" height="78" viewBox="0 0 89 78" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,15 +25,34 @@
                       <%end%>
                   </div>
                   <div class="site_menu">
-                    <% if user_signed_in? %>
-                      <span class="nav_link no_mobile"><%=current_user.fullname%></span>
-                      <%= link_to 'Logout', destroy_user_session_path,method: :delete,class:"no_mobile nav_link"%>
-                       <% else %>
-                       <%= link_to 'Login', new_user_session_path,class:"nav_link no_mobile"%>
-                       <%= link_to 'Register A Business', new_user_registration_path,class:"nav_link no_mobile"%>
-                       
-                    <% end %>
-                      <span class="only_mobile"><a href="" class=" "><i class="fas fa-bars fa-2x"></i></a></span>
+                      <ul class="nav_links">
+                        <% if user_signed_in? %>
+                            <li class="nav_items no_mobile"> <a href="/"> Home</a> </li>
+                            <li class="nav_items"> 
+                            <a class="click"><i class="far fa-user-circle fa-2x "></i></a>
+                            
+                            <%# dropdown %>
+                              <div class="dropnav">
+                                <div class="dropnav__wrapper">
+                                <a href="" class="drop_down_items" ></a>
+                                 <a href="" class="drop_down_items"><%=current_user.fullname%></a>
+                                 <a href="" class="drop_down_items">Business Profile</a>
+                                 <%= link_to 'Settings', edit_user_registration_path,class:"drop_down_items"%>
+                                  <a href="" class="drop_down_items">Help</a>
+                                 <%= link_to 'Logout', destroy_user_session_path,method: :delete,class:" drop_down_items"%>
+                                </div>
+                              
+                              </div>
+                            
+                            </li>
+                            
+                          <% else %>
+                          <%= link_to 'Login', new_user_session_path,class:"nav_items no_mobile"%>
+                          <%= link_to 'Register A Business', new_user_registration_path,class:"nav_items no_mobile"%>
+                          
+                        <% end %>
+                      <span class="only_mobile"><a href="" class=" "></a></span>
+                      </ul>
                   </div>
               </div>
               <div class="flash">
