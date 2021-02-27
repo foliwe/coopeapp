@@ -3,7 +3,11 @@ $light_gray: #DFDFDF;
 $bg_success: #81dd81;
 $bg_danger: #fa7575;
 
-
+section.index{
+    padding: 0 6px;
+    max-width: 1440px;
+    margin: auto;
+}
 
 .body_wrapper{
     background-image: url(/assets/blackwallstreet.jpg);
@@ -120,6 +124,55 @@ ul.nav_links {
 
     }
 }
+section.advanced_search{
+    width: 100%;
+    text-align: center;
+
+}
+.form_select{
+.select{
+    padding: 2px;
+}
+   display: grid;
+   justify-content: space-between;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   padding: 10px;
+    width: 80%;
+    margin: auto;
+
+    .checks{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    div{
+        padding-right: 5px;
+    }
+    }
+}
+
+.button_field{
+    text-align: center;
+}
+.btn{
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+.btn-default{
+    color: white;
+    background-color: #000000;
+    &:hover{
+        background-color: $dark_gray;
+        
+    }
+}
+
+.business_search{
+    width: 100%;
+}
+
 .bg-verified,
 .bg-not-verified {
     border-radius: 6px;
@@ -161,6 +214,8 @@ section.main_landing{
 }
 
 section.index{
+    width: 100%;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     
@@ -171,13 +226,7 @@ section.index{
 section.business_show{
     background-color: #fff;
 }
-section.advanced_search{
-    //background-color: rgb(4, 116, 110);
-    display: grid;
-    place-content: center;
-    padding: 80px 0;
-    
-}
+
 section.card{
     //background-color: coral;
     //border: 2px solid rgb(0, 4, 238);
@@ -285,9 +334,7 @@ h1.title{
 
 // INPUTS
 
-input[type="text" ]{
-    
-}
+
 
 // Links
 span.frontpage, a.frontpage{
@@ -349,6 +396,8 @@ input.search_box{
     content: "one";
 }
 }
+
+
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $dark_gray;
@@ -370,7 +419,13 @@ input.search_box{
 }
 
 
-     
+  select {
+      width: 100%;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+  }
 
     
 
@@ -393,10 +448,36 @@ input.search_box{
         box-sizing: border-box;
         font-family: 'Montserrat', sans-serif;
     }
+    h1.head{
+        font-size: 2em;
+        color: $dark_gray;
+        padding: 10px;
+    }
+    .form_select {
+        .select_field {
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
 
-    .limits {
-        max-width: 1440px;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3 ,1fr) ;
+        padding: 10px;
+        width: 80%;
         margin: auto;
+
+        .checks {
+            display: flex;
+            justify-content: center;
+
+            div {
+                padding-right: 5px;
+            }
+        }
+
+        .button_field{
+        }
     }
 
     .business_card {
@@ -408,6 +489,14 @@ input.search_box{
         grid-template-rows: minmax(250px auto);
        
     }
+     .select_group {
+         display: flex;
+         div {
+             padding: 10px 0;
+         }
+
+
+     }
     section.card {
         //background-color: coral;
         //border: 2px solid rgb(0, 4, 238);
@@ -454,6 +543,10 @@ input.search_box{
     }
 
 }
+.navbar{
+    max-width: 1440px;
+    margin: auto;
+}
 .navbar_landing {
     margin-top: 60px;
     max-width: 1440px;
@@ -484,6 +577,7 @@ input.search_box{
     left: 0;
     height: 20px;
     width: 20px;
+    border: 1px solid $dark_gray;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
 }

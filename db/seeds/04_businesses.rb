@@ -16,8 +16,9 @@ BUSINESSES_TO_CREATE.times do
                     description: Faker::Lorem.paragraph(sentence_count: 2),
                     mobile: Faker::PhoneNumber.cell_phone_in_e164,
                     phone: Faker::PhoneNumber.cell_phone,
-                    zip_code: Faker::Address.zip_code   
-                    )
+                    zip_code: Faker::Address.zip_code,
+    )
+                    
     progressbar.increment
 end
 

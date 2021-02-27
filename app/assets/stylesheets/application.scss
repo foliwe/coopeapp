@@ -12,11 +12,23 @@ $bg_color: #ffffff;
     box-sizing: border-box;
     font-family: 'Montserrat',sans-serif;
     font-size: 14px;
+    button{
+        background-color: none;
+        border: none;
+    }
    a{
        text-decoration: none;
    }
-
+   input[type=text]:focus {
+       border:none;
+   }
 }
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
 hr{
     background-color: $light_gray;
     height: 6px;
@@ -74,11 +86,10 @@ section.nav_landing{
     width: 100vw;
     margin-top: 30px;
 }
-section.main{
-    
-}
+
 
 .limits{
   max-width: 400px;
   margin: auto;
 }
+
