@@ -86,6 +86,7 @@ ul.nav_links {
     cursor: pointer;
 }
     .dropnav {
+        z-index:999 ;
         -webkit-box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
         -moz-box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
         box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
