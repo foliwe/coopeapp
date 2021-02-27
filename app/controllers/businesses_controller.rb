@@ -6,10 +6,9 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
+
     #@businesses = Business.all
-    @q = Business.ransack(params[:q])
-    @business = @q.result(distinct: true)
-  
+    @businesses =  Business.searchkick_search( params[:search],where:{ or: [[{country: params[:country]},{continent: params[:continent]},{business_type: params[:business_type]}]]}).results
   end
 
   # GET /businesses/1 or /businesses/1.json
@@ -88,8 +87,7 @@ class BusinessesController < ApplicationController
         :accepts_partnership,:address,
         :number_of_employee,:business_address,
         :mobile, :phone, :business_email, :zip_code,
-        :category_id,photos: [] )
+        :category_id,:country,:continent,photos: [] )
     end
 end
 
- 

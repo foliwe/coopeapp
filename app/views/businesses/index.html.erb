@@ -1,11 +1,14 @@
     <section class="index ">
-
+      <%= form_tag(businesses_path,id: 'search_business_form', method: "get") do %>
         <section class="advanced_search bg_white">
         <h1 class="head">SEARCH FORM</h1>
+          <div class="search_form">
+            <input type="text" class="search_box" name="search" value="<%= params[:search] %>" placeholder="search for a business">
+          </div>
                   <div class="form_select">
                   <div class="select_field">
                     <div class="select">
-                      <select id="business" name="businesslist" form="searchForm">
+                      <select id="business" name="business_type">
                         <option value="" disabled selected>Select Business Type</option>
                         <option value="volvo">Continent</option>
                         <option value="saab">Saab</option>
@@ -14,23 +17,27 @@
                       </select>
                     </div>
                     <div class="select">
-                      <select id="continent" name="continetlist" form="searchForm">
+                      <select id="continent" name="continent" >
                         <option value="" disabled selected>Select Continent</option>
                         <option value="saab">Saab</option>
                         <option value="opel">Opel</option>
                         <option value="audi">Audi</option>
+                        <option value="Europe">Europe</option>
+
                       </select>
                     </div>
                     <div class="select">
-                       <select id="country" name="countrylist" form="searchForm">
+                       <select id="country" name="country" >
                         <option value="" disabled selected>Select Country</option>
                         <option value="saab">Saab</option>
                         <option value="opel">Opel</option>
                         <option value="audi">Audi</option>
+                         <option value="Pakistan">Pakistan</option>
+
                       </select>
                     </div>
                     <div class="select">
-                      <select id="city" name="city" form="searchForm">
+                      <select id="city" name="city" >
                         <option value="" disabled selected>Select City</option>
                         <option value="saab">Saab</option>
                         <option value="opel">Opel</option>
@@ -55,22 +62,16 @@
                     </div>
                     <div class="button_field">
                     
-                      <button class="btn btn-default">
+                      <button class="btn btn-default" type="submit">
                           Find Business
                       </button>
                     </div>
-                  </div>    
-
-                
-               
-               
-              
-              
+                  </div>
         </section>
-        
+        <% end %>
         <section class="card  ">
           
-          <% @business.each do |business| %>
+          <% @businesses.each do |business| %>
               <div class="business_card bg_white">
                 <div class="business_card_thumbnail">
                     <%= image_tag(business.photos[0].variant(resize_to_fill: [300, 200])) if business.photos.present?%>

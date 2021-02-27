@@ -16,6 +16,7 @@ gem 'wicked'
 gem 'cancancan'
 gem 'rack-cors'
 gem 'image_processing'
+gem 'searchkick'
 gem 'aws-sdk-s3', require:false
 gem 'sidekiq', '~> 5.2.5'
 gem 'redis', '~> 4.0'
