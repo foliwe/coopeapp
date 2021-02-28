@@ -12,7 +12,9 @@ class Business < ApplicationRecord
           name: business_name,
           business_type: business_type,
           country: countries.present? ? countries.pluck(:name) : nil,
-          continent: countries.present? ? countries.joins(:continent).map{|x|x.continent.name} : nil
+          continent: countries.present? ? countries.joins(:continent).map{|x|x.continent.name} : nil,
+          verified: verified,
+          partnership: accepts_partnership
         }
     end
 
