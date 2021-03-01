@@ -8,7 +8,8 @@ class BusinessesController < ApplicationController
   def index
 
     #@businesses = Business.all
-    @businesses =  Business.searchkick_search( params[:search],where:{ or: [[{country: params[:country]},{continent: params[:continent]},{business_type: params[:business_type]},{verified: params[:verified]},{partnership: params[:accepts_partnership]}]]}).results
+    query = params[:search].present? ? params[:search] : '*'
+    @businesses =  Business.searchkick_search(query,where:{ or: [[{country: params[:country]},{continent: params[:continent]},{business_type: params[:business_type]},{verified: params[:verified]},{partnership: params[:accepts_partnership]}]]}).results
   end
 
   # GET /businesses/1 or /businesses/1.json
