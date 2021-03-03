@@ -1,22 +1,11 @@
+   
 <section class="index ">
-  <%= form_tag(businesses_path,id: 'search_business_form', method: "get") do %>
-    <section class="advanced_search bg_white">
-      <h1 class="head">SEARCH FORM</h1>
-      <div class="search_form">
-        <input type="text" class="search_box" name="search" value="<%= params[:search] %>" placeholder="search for a business">
-      </div>
-      <div class="form_select">
-        <div class="select_field">
-          <div class="select">
-            <select id="business" name="business_type">
-              <option value="" disabled selected>Select Business Type</option>
-              <option value="volvo">Continent</option>
-              <option value="saab">Saab</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-            </select>
-          </div>
-                  <div class="form_select">
+    
+    <%= form_tag(businesses_path,id: 'search_business_form', method: "get") do %>
+      <section class="advanced_search bg_white">
+          <h1 class="head">SEARCH FORM</h1>
+          <div class="search_form">
+               <div class="form_select">
                   <div class="select_field">
                     <div class="select">
                       <select id="business" name="business_type">
@@ -35,83 +24,82 @@
                         <option value="opel">Opel</option>
                         <option value="audi">Audi</option>
                         <option value="Europe">Europe</option>
+                      </select>
+                    </div>
+                    <div class="select">
+                      <select id="country" name="country" >
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                        <option value="Pakistan">Pakistan</option>
+                      </select>
+                    </div>
+                    <div class="select">
+                      <select id="city" name="city" >
+                        <option value="" disabled selected>Select City</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                      </select>
+                    </div>
+                  </div> <!-- end select_field-->
+                    <div class=" checks">
+                      <div>
+                        <label class="contain">Verified
+                          <%= check_box_tag :verified,true,params[:verified] %>
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div>
+                        <label class="contain">Partnership
+                          <%= check_box_tag :partnership,true,params[:partnership] %>
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="button_field">
 
-            </select>
-          </div>
-          <div class="select">
-            <select id="country" name="country" >
-              <option value="" disabled selected>Select Country</option>
-              <option value="saab">Saab</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-              <option value="Pakistan">Pakistan</option>
+                      <button class="btn btn-default" type="submit">
+                        Find Business
+                      </button>
+                    </div>
+                  </div>
+               </div>
+           </div>
+      </section>
+          <% end %>
+      <section class="card  ">
 
-            </select>
+        <% @businesses.each do |business| %>
+          <div class="business_card bg_white">
+            <div class="business_card_thumbnail">
+              <%= image_tag(business.photos[0].variant(resize_to_fill: [300, 200])) if business.photos.present?%>
+            </div>
+            <div class="business_card_details">
+              <div class="location">
+                <div class="continent">Continent</div>
+                <div class="country">Country</div>
+                <div class="city">City</div>
+              </div>
+              <span class="buisiness_name">
+                          <h4><%= link_to business.business_name ,business %></h4> 
+                        </span>
+              <span class="buisiness_email">
+                      <%= business.category.name %>
+                        </span>
+              <span class="buisiness_partnership">
+                            
+                          <span class=" flex_item2 <%= business.accepts_partnership ? 'bg-success' : 'bg-danger' %>"><%= business.accepts_partnership ? 'Partnership': 'No Partnership'%></span> 
+                        </span>
+              <span class="buisiness_verified">
+                          <span class=" flex_item3  <%= business.verified ? 'bg-verified' : 'bg-not-verified' %>"><%= business.verified ? 'Verified' : 'Not Verified' %></span> 
+                        </span>
+            </div>
           </div>
-          <div class="select">
-            <select id="city" name="city" >
-              <option value="" disabled selected>Select City</option>
-              <option value="saab">Saab</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-            </select>
-          </div>
-        </div>
-        <div class=" checks">
+        <% end %>
 
-          <div>
-            <label class="contain">Verified
-              <%= check_box_tag :verified,true,params[:verified] %>
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div>
-            <label class="contain">Partnership
-              <%= check_box_tag :partnership,true,params[:partnership] %>
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="button_field">
-
-          <button class="btn btn-default" type="submit">
-            Find Business
-          </button>
-        </div>
-      </div>
-    </section>
-  <% end %>
-  <section class="card  ">
-
-    <% @businesses.each do |business| %>
-      <div class="business_card bg_white">
-        <div class="business_card_thumbnail">
-          <%= image_tag(business.photos[0].variant(resize_to_fill: [300, 200])) if business.photos.present?%>
-        </div>
-        <div class="business_card_details">
-          <div class="location">
-            <div class="continent">Continent</div>
-            <div class="country">Country</div>
-            <div class="city">City</div>
-          </div>
-          <span class="buisiness_name">
-                      <h4><%= link_to business.business_name ,business %></h4> 
-                    </span>
-          <span class="buisiness_email">
-                   <%= business.category.name %>
-                    </span>
-          <span class="buisiness_partnership">
-                        
-                       <span class=" flex_item2 <%= business.accepts_partnership ? 'bg-success' : 'bg-danger' %>"><%= business.accepts_partnership ? 'Partnership': 'No Partnership'%></span> 
-                    </span>
-          <span class="buisiness_verified">
-                       <span class=" flex_item3  <%= business.verified ? 'bg-verified' : 'bg-not-verified' %>"><%= business.verified ? 'Verified' : 'Not Verified' %></span> 
-                    </span>
-        </div>
-      </div>
-    <% end %>
-
-  </section>
+      </section>
 
 </section>
 
