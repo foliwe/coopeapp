@@ -36,34 +36,29 @@
                       </select>
                     </div>
                     <div class="select">
-                      <select id="city" name="city" >
-                        <option value="" disabled selected>Select City</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                      </select>
+                      <input type="text"  name="search" value="<%= params[:search] %>" placeholder="search city or state">
                     </div>
                   </div> <!-- end select_field-->
-                    <div class=" checks">
-                      <div>
-                        <label class="contain">Verified
-                          <%= check_box_tag :verified,true,params[:verified] %>
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                      <div>
-                        <label class="contain">Partnership
-                          <%= check_box_tag :partnership,true,params[:partnership] %>
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
+                
+                  <div class=" checks">
+                    <div>
+                      <label class="contain">Verified
+                        <%= check_box_tag :verified,true,params[:verified] %>
+                        <span class="checkmark"></span>
+                      </label>
                     </div>
-                    <div class="button_field">
+                    <div>
+                      <label class="contain">Partnership
+                        <%= check_box_tag :partnership,true,params[:partnership] %>
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="button_field">
 
-                      <button class="btn btn-default" type="submit">
-                        Find Business
-                      </button>
-                    </div>
+                    <button class="btn btn-default" type="submit">
+                      Find Business
+                    </button>
                   </div>
                </div>
            </div>

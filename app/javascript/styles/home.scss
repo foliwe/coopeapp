@@ -133,6 +133,13 @@ section.advanced_search{
 .form_select{
 .select{
     padding: 2px;
+    input{
+         width: 100%;
+         padding: 16px 20px;
+         border: none;
+         border-radius: 4px;
+         background-color: #f1f1f1;
+    }
 }
    display: grid;
    justify-content: space-between;
