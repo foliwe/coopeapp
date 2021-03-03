@@ -10,6 +10,7 @@ class Business < ApplicationRecord
     def search_data
         {
           name: business_name,
+          category: category.present? ? category.name : nil,
           business_type: business_type,
           country: countries.present? ? countries.pluck(:name) : nil,
           continent: countries.present? ? countries.joins(:continent).map{|x|x.continent.name} : nil,
