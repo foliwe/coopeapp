@@ -3,6 +3,11 @@ $light_gray: #DFDFDF;
 $bg_success: #81dd81;
 $bg_danger: #fa7575;
 
+
+
+.text-center {
+    text-align: center;
+}
 section.index{
     padding: 0 6px;
     max-width: 1440px;
@@ -210,15 +215,12 @@ section.main_landing{
 }
 
 .search_area {
-    //background-color: aqua;
     margin-top: 3px;
-    padding-top: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    //background-color: aqua;
-    gap: 10px;
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto;
+     place-items: center;
+     gap: 3px;
 }
 
 section.index{
@@ -359,6 +361,7 @@ span.frontpage, a.frontpage{
 }
 
 .logins {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -397,7 +400,7 @@ input.search_box{
     height: 3rem;
     border-radius: 100px;
     border: 1px solid $dark_gray;
-    padding-left: 15px;
+   // padding-left: 10px;
     color: $dark_gray;
     background-color: #fff;
 &::before{
@@ -405,14 +408,34 @@ input.search_box{
 }
 }
 
+.search_form_box{
+    position: relative;
+    input{
+        padding-left: 15px;
+    }
+    span{
+        position: absolute;
+        right: 0;
+        top: 13px;
+        padding-right: 8px;
+
+       button{
+           background-color: transparent;
+       }
+
+       i.fas{
+           color: $dark_gray;
+       }
+    }
+}
 
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $dark_gray;
     opacity: 1;
     position: absolute;
-    left: 70px;
-    top: 0px;
+    left: 20px;
+    top: 11px;
     /* Firefox */
 }
 
@@ -455,6 +478,24 @@ input.search_box{
         padding: 0;
         box-sizing: border-box;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .search_form_box {
+        position: relative;
+
+        span {
+            padding-left: 60px;
+            top: 16px;
+        }
+    }
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $dark_gray;
+        opacity: 1;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        /* Firefox */
     }
     h1.head{
         font-size: 2em;

@@ -22,6 +22,16 @@ $bg_color: #ffffff;
    input[type=text]:focus {
        border:none;
    }
+
+   textarea:focus,
+   input:focus {
+       outline: none;
+   }
+
+   *:focus {
+       outline: none;
+   }
+
 }
 *,
 *:after,
