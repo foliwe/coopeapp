@@ -1,44 +1,80 @@
-<section class="business_show padding-sm">
-<p id="notice"><%= notice %></p>
+<section class="container">
+    <div class="business_details_section">
+          <div class="business_show_card">
+              <div class="_show_card_header">
+                    <span class="logo_image">
+                          <% @business.photos.each do |photo|%>
+                        <%if photo.variable?%>
+                          <%=image_tag photo.variant(resize_to_limit: [300, 300])%>
+                          <% elsif photo.previewable? %>
+                          <%=image_tag photo.preview(resize: [150, 150]),rails_blob_path(photo, disposition: attachment)%>
+                          <% elsif photo.image? %>
+                          <%=image_tag photo.variant(resize_to_limit: [300, 300])%>
+                          <%else%>
+                          <%=link_to photo.filename, rails_blob_path(photo, disposition: :attachment)%>
+                            <%end%>
+                        <%end%>
+                    </span>
+              </div>
+              <div class="_show_card_body">
+                    <div class="">
+                      <h2 class="show"><%= @business.business_name %></h2>
+                    </div>
+                    <div class="location">
+                      <div class="continent">Continent</div>
+                      <div class="country">Country</div>
+                      <div class="city">City</div>
+                    </div>
+                    <div class="_show_card_des">
+                        <%= @business.description %>
+                    </div>
+                    <div class="_show_buttons">
+                      <div class="">
+                        <a class="btn btn-default" href="#">add to favotite</a>
+                      </div>
+                      <div class="">
+                        <a class="btn btn-dark" href="#">go to website  <i class="fas fa-globe-africa"></i></a>
+                      </div>
+                    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @business.business_name %>
-</p>
-<p>
-  <strong>Number of employee:</strong>
-  <%= @business.number_of_employee %>
-</p>
+              </div>
+              <div class=""></div>
+          </div>
+    </div>
 
-<p>
-  <strong>About Business:</strong>
-  <%= @business.description %>
-</p>
-
-<p>
-  <strong>Accepts partnership:</strong>
-  <%= human_boolean(@business.accepts_partnership)%>
-</p>
- <p>
- <div class="">
- 
-  <% @business.photos.each do |photo|%>
-    <%if photo.variable?%>
-      <%=image_tag photo.variant(resize_to_limit: [300, 300])%>
-      <% elsif photo.previewable? %>
-      <%=image_tag photo.preview(resize: [300, 300]),rails_blob_path(photo, disposition: attachment)%>
-      <% elsif photo.image? %>
-      <%=image_tag photo.variant(resize_to_limit: [300, 300])%>
-      <%else%>
-      <%=link_to photo.filename, rails_blob_path(photo, disposition: :attachment)%>
-    <%end%>
-<%if can? :update, @business%><%= link_to 'Remove', business_photo_remove_path(@business , photo), method: :delete, data: { confirm: 'Are you sure?' } %> <%end%>              
-   <%end%>
- </p>
- </div>
- <%if can? :update, @business%><%= link_to 'Delete', @business, method: :delete, data: { confirm: 'Are you sure?' } %> <%end%>
-<%if can? :update, @business%><%= link_to 'Edit', edit_business_path(@business) %> <%end%>|
-<%= link_to 'Back', businesses_path %>
+    <div class="business_advert_section">
+        <h2 class="show"></h2>
+          
+    </div>
 </section>
+   
+  
+  <%#= @business.number_of_employee %>
+
+  
+
+  <%#= human_boolean(@business.accepts_partnership)%>
+
+
+ <%# <div class=""> %>
+ 
+  <%# @business.photos.each do |photo|%>
+    <%#if photo.variable?%>
+      <%#=image_tag photo.variant(resize_to_limit: [300, 300])%>
+      <%# elsif photo.previewable? %>
+      <%#=image_tag photo.preview(resize: [300, 300]),rails_blob_path(photo, disposition: attachment)%>
+      <%# elsif photo.image? %>
+      <%#=image_tag photo.variant(resize_to_limit: [300, 300])%>
+      <%#else%>
+      <%#=link_to photo.filename, rails_blob_path(photo, disposition: :attachment)%>
+        <%#end%>
+      <%#if can? :update, @business%><%#= link_to 'Remove', business_photo_remove_path(@business , photo), method: :delete, data: { confirm: 'Are you sure?' } %> <%#end%>              
+    <%#end%>
+
+ <%# </div> %>
+    <%#if can? :update, @business%><%#= link_to 'Delete', @business, method: :delete, data: { confirm: 'Are you sure?' } %> <%#end%>
+    <%#if can? :update, @business%><%#= link_to 'Edit', edit_business_path(@business) %> <%#end%>
+    <%#= link_to 'Back', businesses_path %>
+
 
  

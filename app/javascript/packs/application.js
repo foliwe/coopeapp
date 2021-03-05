@@ -11,8 +11,11 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+import 'styles/defaults'
 import 'styles/home'
-import "controllers"
+import 'styles/business_show'
+import 'styles/buttons'
+
 
 
 // document.addEventListener("turbolinks:load", function() {

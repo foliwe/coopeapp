@@ -1,0 +1,32 @@
+@import 'defaults';
+
+.btn {
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: .7em;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+
+
+.btn-default {
+    color: #ffffff;
+    background-color: $light_gray;
+
+    &:hover {
+        background-color: $dark_gray;
+
+    }
+}
+
+.btn-dark{
+    color: #fff;
+    background-color: $dark;
+     &:hover {
+         background-color: $light_gray;
+
+     }
+}
