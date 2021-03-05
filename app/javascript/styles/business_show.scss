@@ -8,9 +8,9 @@ section.container {
     margin-top: 50px;
     
 }
-
-
-
+.business_details_section{
+    padding: 5px;
+}
 .business_advert_section{
      background-color: #ffffff;
 }
@@ -65,6 +65,48 @@ section.container {
 
     
 }
+
+._show_card_footer{
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
+    box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
+    margin-top: 2px;
+    padding: 0px 20px;
+    background-color: #fff;
+
+
+    ul{
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+    li{
+        padding: 10px 0;
+        a{
+            color: $light_gray;
+            font-weight: bold;
+
+            &:active{
+                color: $dark_gray
+            }
+        }
+
+    }
+    }
+}
+
+._show_card_footer_tabs{
+    margin-top: 6px;
+     padding: 0px 20px;
+    background-color: #fff;
+
+}
+
+.show_end_footer{
+    text-align: center;
+    margin-top: 1px;
+    padding: 15px;
+    background-color: #fff;
+}
 // Desktop
 @media screen and (min-width: 1280px){
 
@@ -79,44 +121,51 @@ section.container {
      .business_show_card {
 
      }
-._show_card_header {
-    position: relative;
-    background-color: $dark_gray;
-    height: 150px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    ._show_card_header {
+        position: relative;
+        background-color: $dark_gray;
+        height: 150px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
 
-    span.logo_image {
-        position: absolute;
-        // height: 150px;
-        // width: 150px;
-        // bottom: -40%;
-        // left: 8%;
-        // border-radius: 50%;
-        border: 3px solid $bg_success;
-        img{
-            width: 100%;
-            border-radius: 50%;
+        span.logo_image {
+            position: absolute;
+            // height: 150px;
+            // width: 150px;
+            // bottom: -40%;
+            // left: 8%;
+            // border-radius: 50%;
+            border: 3px solid $bg_success;
+            img{
+                width: 100%;
+                border-radius: 50%;
+            }
         }
     }
-}
-     
-._show_buttons {
-    width: 50%;
-}
-
-
-._show_card_body {
-    padding: 80px 20px 10px 20px;
-    background-color: #fff;
-    height: 100%;
-
-    div {
-        padding-bottom: 12px;
+        
+    ._show_buttons {
+        width: 50%;
     }
 
-}
 
+    ._show_card_body {
+        padding: 80px 20px 10px 20px;
+        background-color: #fff;
+        height: 100%;
 
+        div {
+            padding-bottom: 12px;
+        }
 
-}
+    }
+
+     ._show_card_footer {
+          ul {
+              width: 60%;
+              li {
+                  padding: 10px 0;
+              }
+          }
+     }
+
+} //end mobileview

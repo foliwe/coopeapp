@@ -26,7 +26,7 @@
                       <div class="city">City</div>
                     </div>
                     <div class="_show_card_des">
-                        <%= @business.description %>
+                        <%= simple_format(@business.description) %>
                     </div>
                     <div class="_show_buttons">
                       <div class="">
@@ -38,7 +38,20 @@
                     </div>
 
               </div>
-              <div class=""></div>
+              <div class="_show_card_footer">
+                <ul>
+                  <li> <a href="#">About</a> </li>
+                  <li> <a href="#">Photos</a> </li>
+                  <li> <a href="#">Projects</a> </li>
+                  <li> <a href="#">Contact</a> </li>
+                </ul>
+              </div>
+              <div class="_show_card_footer_tabs">
+                    <h2>About</h2>
+              </div>
+              <div class="show_end_footer">
+                      <button class="btn btn-dark">see more</button>
+              </div>
           </div>
     </div>
 
