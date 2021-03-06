@@ -39,15 +39,38 @@
 
               </div>
               <div class="_show_card_footer">
-                <ul>
-                  <li> <a href="#">About</a> </li>
-                  <li> <a href="#">Photos</a> </li>
-                  <li> <a href="#">Projects</a> </li>
-                  <li> <a href="#">Contact</a> </li>
-                </ul>
-              </div>
-              <div class="_show_card_footer_tabs">
-                    <h2>About</h2>
+                  <ul class="list_items">
+                    <li class="tab_links active"> <a href="#"data-for-tab="1">About</a> </li>
+                    <li class="tab_links"> <a href="#"data-for-tab="2">Photos</a> </li>
+                    <li class="tab_links"> <a href="#"data-for-tab="3">Projects</a> </li>
+                    <li class="tab_links"> <a href="#"data-for-tab="4">Contact</a> </li>
+                  </ul>
+                  <div class="_show_card_footer_tabs">
+                      <div class="tab__content tab__content_active" data-tab="about">
+                          About
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam amet laborum quaerat vel, magnam voluptatibus laboriosam dolorum dolorem labore eveniet, ipsa distinctio! 
+                            </p>
+                      </div>
+                      <div class="tab__content" data-tab="photo">
+                        Photo
+                          <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam amet laborum quaerat vel, magnam voluptatibus laboriosam dolorum dolorem labore eveniet, ipsa distinctio! 
+                            </p>
+                      </div>
+                      <div class="tab__content" data-tab="project">
+                        Project
+                          <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam amet laborum quaerat vel, magnam voluptatibus laboriosam dolorum dolorem labore eveniet, ipsa distinctio! 
+                            </p>
+                      </div>
+                      <div class="tab__content" data-tab="contact">
+                        Contact
+                          <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam amet laborum quaerat vel, magnam voluptatibus laboriosam dolorum dolorem labore eveniet, ipsa distinctio! 
+                            </p>
+                      </div>
+                  </div>
               </div>
               <div class="show_end_footer">
                       <button class="btn btn-dark">see more</button>
@@ -60,7 +83,29 @@
           
     </div>
 </section>
-   
+   <script>
+      
+    function showPanel() {
+      document.querySelectorAll('tab_links a').forEach(a =>{
+        a.addEventListener("click",(e)=>{
+          e.preventDefault;
+          
+          const ulList = document.querySelector('.list_items');
+          const footer = document.querySelector('._show_card_footer');
+          const tabNumber = a.dataset.forTab;
+          const tabToActivate = footer.querySelector('._show_card_footer_tabs .tab__content[data-tab="${tabNumber}"]');
+
+          console.log(header);
+          console.log(tabContainer);
+          console.log(tabNumber);
+          console.log(tabToActivate);
+        })
+      });
+    }
+      document.addEventListener("DOMContentLoaded", function() {
+        showPanel();
+      });
+   </script>
   
   <%#= @business.number_of_employee %>
 

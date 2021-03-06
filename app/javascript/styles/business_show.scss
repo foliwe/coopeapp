@@ -9,7 +9,7 @@ section.container {
     
 }
 .business_details_section{
-    padding: 5px;
+    padding: 10px;
 }
 .business_advert_section{
      background-color: #ffffff;
@@ -79,28 +79,46 @@ section.container {
         display: flex;
         width: 90%;
         justify-content: space-between;
-    li{
-        padding: 10px 0;
-        a{
-            color: $light_gray;
-            font-weight: bold;
+        li{
+            padding: 10px 0;
+            a{
+                color: $lighter_gray;
+                font-weight: bold;
 
-            &:active{
-                color: $dark_gray
+                &:active{
+                    color: $dark_gray
+                }
+
+                &:hover{
+                    color: $dark_gray;
+                }
+
+            
             }
+            
         }
 
-    }
+        li.active{
+           border-bottom: 3px solid $bg_success;
+           a{
+               color: $dark_gray;
+           }
+        }
     }
 }
 
 ._show_card_footer_tabs{
     margin-top: 6px;
-     padding: 0px 20px;
     background-color: #fff;
 
 }
+.tab__content{
+    display: none;
+}
 
+.tab__content_active {
+    display: block;
+}
 .show_end_footer{
     text-align: center;
     margin-top: 1px;
