@@ -8,15 +8,15 @@
                <div class="form_select">
                   <div class="select_field">
                     <div class="select">
-                      <%= select_tag "category", options_for_select(Category.all.pluck(:name),params[:category]) %>
+                      <%= select_tag "category", options_for_select(Category.all.pluck(:name),params[:category]),{include_blank: 'All'} %>
                     </div>
                     
                     <div class="select">
-                      <%= select_tag "continent", options_for_select(Continent.all.pluck(:name),params[:continent]) %>
+                      <%= select_tag "continent", options_for_select(Continent.all.pluck(:name),params[:continent]),{include_blank: 'All'} %>
                     </div>
 
                     <div class="select">
-                        <%= select_tag "country", options_for_select(Country.all.pluck(:name),params[:country]) %>
+                        <%= select_tag "country", options_for_select(Country.all.pluck(:name),params[:country]),{include_blank: 'All'} %>
                     </div>
 
                     <div class="select">
