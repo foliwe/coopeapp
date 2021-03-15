@@ -6,6 +6,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
+
     #@businesses = Business.all
     query = params[:search].present? ? params[:search] : '*'
     filters = params.except(:action, :controller,:search)
