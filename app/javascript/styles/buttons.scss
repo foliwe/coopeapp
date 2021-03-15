@@ -17,7 +17,8 @@
     background-color: $light_gray;
 
     &:hover {
-        background-color: $dark_gray;
+        //darken ( $light_gray , 60%);
+        background-color: darken ($light_gray, 60);
 
     }
 }
@@ -26,7 +27,8 @@
     color: #fff;
     background-color: $dark;
      &:hover {
-         background-color: $light_gray;
+         background-color: lighten ($light_gray, 60);
+         //background-color: $light_gray;
 
      }
 }
