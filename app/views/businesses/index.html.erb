@@ -8,33 +8,17 @@
                <div class="form_select">
                   <div class="select_field">
                     <div class="select">
-                      <select id="business" name="business_type">
-                        <option value="" disabled selected>Select Business Type</option>
-                        <option value="volvo">Continent</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                      </select>
+                      <%= select_tag "category", options_for_select(Category.all.pluck(:name),params[:category]),{include_blank: 'All'} %>
                     </div>
                     
                     <div class="select">
-                      <select id="continent" name="continent" >
-                        <option value="" disabled selected>Select Continent</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                        <option value="Europe">Europe</option>
-                      </select>
+                      <%= select_tag "continent", options_for_select(Continent.all.pluck(:name),params[:continent]),{include_blank: 'All'} %>
                     </div>
+
                     <div class="select">
-                      <select id="country" name="country" >
-                        <option value="" disabled selected>Select Country</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                        <option value="Pakistan">Pakistan</option>
-                      </select>
+                        <%= select_tag "country", options_for_select(Country.all.pluck(:name),params[:country]),{include_blank: 'All'} %>
                     </div>
+
                     <div class="select">
                       <input type="text"  name="search" value="<%= params[:search] %>" placeholder="search city or state">
                     </div>

@@ -6,6 +6,16 @@
     </div>
 
       <div class="search_form">
+        <input type="text" class="search_box" name="search" value="<%= params[:search] %>" placeholder="search for a business">
+      </div>
+      <br>
+      <% @continents.each do |continent| %>
+        <div class="quick_links">
+          <label class="contain"><%= continent.name %>
+            <input type="checkbox" name="continent" value="<%= continent.name %>">
+            <span class="checkmark"></span>
+          </label>
+
         <div class="search_form_box">
           <input type="text" class="search_box" name="search" value="<%= params[:search] %>" placeholder="search for a business">
           <span>
