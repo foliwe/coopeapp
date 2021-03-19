@@ -2,7 +2,7 @@
 <section class="index ">
     
     <%= form_tag(businesses_path,id: 'search_business_form', method: "get") do %>
-      <section class="advanced_search bg_white">
+      <section class="advanced_search">
           <h1 class="head">SEARCH FORM</h1>
           <div class="search_form">
                <div class="form_select">
@@ -51,9 +51,9 @@
       <section class="card  ">
 
         <% @businesses.each do |business| %>
-          <div class="business_card bg_white">
+          <div class="business_card ">
             <div class="business_card_thumbnail">
-              <%= image_tag(business.photos[0].variant(resize_to_fill: [300, 200])) if business.photos.present?%>
+              <%= image_tag(business.photos[0].variant(resize_to_fill: [150, 150])) if business.photos.present?%>
             </div>
             <div class="business_card_details">
               <div class="location">
@@ -68,9 +68,8 @@
                       <%= business.category.name %>
                         </span>
               <span class="buisiness_partnership">
-                            
-                          <span class=" flex_item2 <%= business.accepts_partnership ? 'bg-success' : 'bg-danger' %>"><%= business.accepts_partnership ? 'Partnership': 'No Partnership'%></span> 
-                        </span>
+                  <span class=" flex_item2 <%= business.accepts_partnership ? 'bg-success' : 'bg-danger' %>"><%= business.accepts_partnership ? 'Partnership': 'No Partnership'%></span> 
+                </span>
               <span class="buisiness_verified">
                           <span class=" flex_item3  <%= business.verified ? 'bg-verified' : 'bg-not-verified' %>"><%= business.verified ? 'Verified' : 'Not Verified' %></span> 
                         </span>
@@ -81,4 +80,5 @@
       </section>
 
 </section>
+
 

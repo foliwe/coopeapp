@@ -11,6 +11,7 @@ BUSINESSES_TO_CREATE.times do
                     number_of_employee:rand(1...101),
                     category_id:rand(1...BUSINESSES_TO_CREATE+1),
                     accepts_partnership: rand(2),
+                    verified: rand(2),
                     business_email: Faker::Internet.email,
                     business_address: Faker::Address.street_address,
                     description: Faker::Lorem.paragraph(sentence_count: 2),

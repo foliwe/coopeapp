@@ -27,9 +27,13 @@
                     </svg>
                     <%end%>
                 </div>
-                <div class="site_menu">
-                     <%= link_to 'Login', new_user_session_path,class:"frontpage no_mobile"%>
-                     <%= link_to 'Register A Business', new_user_registration_path,class:"frontpage no_mobile"%>
+                <div class="logins only_mobile ">
+                <span class="frontpage log"> <%=link_to 'Login', new_user_session_path%>  </span>
+                <span class="frontpage reg"> <%=link_to 'Register A Business', new_user_registration_path%>  </span>
+              </div>
+                <div class="site_menu  no_mobile">
+                     <%= link_to 'Login', new_user_session_path,class:"frontpage"%>
+                     <%= link_to 'Register A Business', new_user_registration_path,class:"frontpage"%>
                 </div>
             </div>
         </section>

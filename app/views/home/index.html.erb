@@ -1,9 +1,10 @@
 <section class="main">
+    <%= form_tag(businesses_path,id: 'search_business_form', method: "get") do %>
   <div class="search_area">
     <div class="">
       <h1 class="title">Black Business Database </h1>
     </div>
-    <%= form_tag(businesses_path,id: 'search_business_form', method: "get") do %>
+
       <div class="search_form">
         <input type="text" class="search_box" name="search" value="<%= params[:search] %>" placeholder="search for a business">
       </div>
@@ -14,14 +15,14 @@
             <input type="checkbox" name="continent" value="<%= continent.name %>">
             <span class="checkmark"></span>
           </label>
+
+        <div class="search_form_box">
+          <input type="text" class="search_box" name="search" value="<%= params[:search] %>" placeholder="search for a business">
+          <span>
+            <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+          </span>
         </div>
-      <% end %>
-      <br><br>
-      <button type="submit" class="btn btn-default" >Submit</button>
-    <% end %>
-    <div class="logins only_mobile">
-      <span class="frontpage log"> <%=link_to 'Login', new_user_session_path%>  </span>
-      <span class="frontpage reg"> <%=link_to 'Register A Business', new_user_registration_path%>  </span>
-    </div>
+      </div>
   </div>
+    <% end %>
 </section>

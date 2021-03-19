@@ -10,8 +10,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "hide" ]
-  static classes =["flex"]
+  static targets = [ "about" ,"photo" ,"content" ,"contact" ]
 
   connect() {
     this.hideTarget.classList.add(this.flexClass)

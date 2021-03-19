@@ -13,12 +13,13 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'wicked'
 gem 'cancancan'
-gem 'countries', '~> 1.2', '>= 1.2.5'
+gem 'country_select'
 gem 'rack-cors'
 gem 'image_processing'
 gem 'searchkick'
 gem 'aws-sdk-s3', require:false
 gem 'sidekiq', '~> 5.2.5'
+gem 'cocoon'
 gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?

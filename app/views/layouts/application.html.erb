@@ -13,7 +13,7 @@
   </head>
 
   <body>
-  <div class="container">
+  <div class="container_flex">
       <section class="nav">
               <div class="navbar bg_white limits">
                   <div class="site_logo bg_white">
@@ -29,19 +29,22 @@
                         <% if user_signed_in? %>
                             <li class="nav_items no_mobile"> <a href="/"> Home</a> </li>
                             <li class="nav_items"> 
-                            <a class="click"><i class="far fa-user-circle fa-2x "></i></a>
+                            <a class="click "onclick="menuToggle();"><i class="far fa-user-circle fa-2x "></i></a>
                             
                             <%# dropdown %>
                               <div class="dropnav">
-                                <div class="dropnav__wrapper">
-                                <a href="" class="drop_down_items" ></a>
-                                 <a href="" class="drop_down_items"><%=current_user.fullname%></a>
-                                 <a href="" class="drop_down_items">Business Profile</a>
-                                 <%= link_to 'Settings', edit_user_registration_path,class:"drop_down_items"%>
-                                  <a href="" class="drop_down_items">Help</a>
-                                 <%= link_to 'Logout', destroy_user_session_path,method: :delete,class:" drop_down_items"%>
-                                </div>
-                              
+                                    <h2><%=current_user.fullname%> <br>
+                                    <span>
+                                        <%=current_user.businesses.first.business_name%>
+                                    </span>
+                                    </h2>
+                                  <ul>
+                                     
+                                      <li> <a href="" class="drop_down_items">Business Profile</a></li>
+                                      <li><%= link_to 'Settings', edit_user_registration_path,class:"drop_down_items"%> </li>
+                                      <li><a href="" class="drop_down_items">Help</a></li>
+                                      <li><%= link_to 'Logout', destroy_user_session_path,method: :delete,class:" drop_down_items"%></li>
+                                  </ul>
                               </div>
                             
                             </li>
@@ -70,5 +73,12 @@
             </div>
         </section>
   </div>
+  <script>
+     function menuToggle() {
+       const toggleMenu = document.querySelector('.dropnav');
+       toggleMenu.classList.toggle('active')
+     }
+
+  </script>
   </body>
 </html>

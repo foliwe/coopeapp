@@ -1,9 +1,11 @@
-$dark_gray: #3C3C3C;
-$light_gray: #DFDFDF;
-$bg_success: #81dd81;
-$bg_danger: #fa7575;
+@import 'defaults';
 
-section.index{
+.text-center {
+    text-align: center;
+}
+section.index{ 
+   // background-color: #81dd81;
+    position: relative;
     padding: 0 6px;
     max-width: 1440px;
     margin: auto;
@@ -18,9 +20,20 @@ section.index{
 
 h1,h2,h3,h4,h5{
     color: $dark_gray;
-    a{
-        color: $dark_gray;
-    }
+    
+}
+
+h1{
+    font-size: 2em;
+}
+
+h2{
+    font-size: 1.5em;
+}
+h2.show {
+    
+    text-transform: capitalize;
+
 }
 .padding-sm{
     padding: 5px;
@@ -91,26 +104,50 @@ ul.nav_links {
         -moz-box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
         box-shadow: 0px 3px 5px 0px rgba(158, 158, 158, 1);
         padding: 20px;
-        background-color: white;
-        border: 1px solid $light_gray;
-        top: 58px;
-        width: 220px;
+        background-color: #ffffff;
+        border: 1px solid $lighter_gray;
+        top: 70px;
+        width: 300px;
         position: absolute;
-        display: none;
+        display: flex;
         right: 0;
+        visibility: hidden;
         flex-direction: column;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+        
         a{
-            
-            text-decoration: none;
             text-transform: capitalize;
-        }
-        .dropnav__wrapper{
-            display: flex;
-            flex-direction: column;
-            .drop_down_items{
-                padding: 10px 0;
+            &:hover{
+                opacity: .5;
+                font-size: 1.2em;
+                transition: 0.2s;
             }
         }
+
+        ul>li{
+            padding: 10px 0;
+        }
+        
+        span{
+            font-size: .6em;
+        }
+        ul::before{
+            content: "";
+            position: absolute;
+            top: -15px;
+            right: 7px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            transform: rotate(45deg);
+        }
+    }
+    .dropnav.active{
+        top: 58px;
+         visibility: visible;
+         opacity: 1;
     }
 
     
@@ -125,9 +162,11 @@ ul.nav_links {
 
     }
 }
-section.advanced_search{
-    width: 100%;
+.advanced_search{
+    background-color: #fff;
     text-align: center;
+    max-width: 1440px;
+    margin: auto;
 
 }
 .form_select{
@@ -141,11 +180,11 @@ section.advanced_search{
          background-color: #f1f1f1;
     }
 }
-   display: grid;
-   justify-content: space-between;
-   grid-template-columns: 1fr;
-   grid-template-rows: auto;
-   padding: 10px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 10px;
     width: 80%;
     margin: auto;
 
@@ -162,20 +201,7 @@ section.advanced_search{
 .button_field{
     text-align: center;
 }
-.btn{
-    cursor: pointer;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 15px;
-}
-.btn-default{
-    color: white;
-    background-color: #000000;
-    &:hover{
-        background-color: $dark_gray;
-        
-    }
-}
+
 
 .business_search{
     width: 100%;
@@ -210,25 +236,18 @@ section.main_landing{
 }
 
 .search_area {
-    //background-color: aqua;
     margin-top: 3px;
-    padding-top: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    //background-color: aqua;
-    gap: 10px;
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto;
+     place-items: center;
+     gap: 3px;
 }
 
 section.index{
     width: 100%;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
     
-    grid-template-rows: .5fr auto;
-    row-gap: 10px;
 }
 
 section.business_show{
@@ -236,20 +255,25 @@ section.business_show{
 }
 
 section.card{
-    //background-color: coral;
+    
     //border: 2px solid rgb(0, 4, 238);
     display: grid;
+    padding: 3px;
+    max-width: 1440px; 
+    margin: auto;   
+    gap: 3px;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 
     
 }
 .business_card{
+    background-color: #fff;
     display: grid;
-    margin-bottom: 5px;
-    justify-content: space-around;
-    grid-template-columns: 1fr auto ;
-    grid-template-rows: 200px;
+    width: 100%;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
 }
 .business_card_thumbnail{
     align-self: center;
@@ -260,45 +284,30 @@ section.card{
 }
 .business_card_details{
     font-size: 90%;
+    //background-color: #ebdd17;
     margin-bottom: 5px;
-    padding: 5px 0;
-    display: flex;
-    justify-content: space-around;
+    padding: 10px 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-around;
     .buisiness_partnership{
         color: white;
-        display: flex;
+        //display: flex;
         font-weight: 500;
-        align-items: center; 
-        .flex_item1 {
-           padding: 3px;
-            background-color: $light_gray;
-        }
-       .flex_item2{
-            padding: 3px;
-       }
+        // align-items: center; 
+        // .flex_item1 {
+        //    padding: 3px;
+        //     background-color: $light_gray;
+        // }
+    //    .flex_item2{
+    //         padding: 3px;
+    //    }
     }
 
-    .location{
-        font-size: 80%;
-        display: flex;
-        color: white;
-        font-weight: 600;
-        text-transform: uppercase;
-        
-
-        .continent{
-        padding: 5px;     
-         background-color: black;
-        }
-        .country {
-            padding: 5px;
-            background-color: $dark_gray;
-        }
-        .city {
-            padding: 5px;
-            background-color: lightgray;
-        }
-    }
+    
 }
 
 section.login ,section.registration {
@@ -318,6 +327,28 @@ section.login ,section.registration {
     grid-template-columns: 1fr 2fr;
 }
 
+.location {
+    font-size: 80%;
+    display: flex;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.continent {
+    padding: 5px;
+    background-color: black;
+}
+
+.country {
+    padding: 5px;
+    background-color: $dark_gray;
+}
+
+.city {
+    padding: 5px;
+    background-color: $lighter_gray;
+}
 
 
 .quick_links{
@@ -359,6 +390,7 @@ span.frontpage, a.frontpage{
 }
 
 .logins {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -374,12 +406,12 @@ span.frontpage, a.frontpage{
     margin-right: 3px;
  background-color: $dark_gray;
   a {
-      color: $light_gray;
+      color: $lighter_gray;
   }
 }
 
 .reg{
-background-color: $light_gray;
+background-color: $lighter_gray;
     a{
         color: $dark_gray;
     }
@@ -397,7 +429,7 @@ input.search_box{
     height: 3rem;
     border-radius: 100px;
     border: 1px solid $dark_gray;
-    padding-left: 15px;
+   // padding-left: 10px;
     color: $dark_gray;
     background-color: #fff;
 &::before{
@@ -405,14 +437,35 @@ input.search_box{
 }
 }
 
+.search_form_box{
+    position: relative;
+    input{
+        padding-left: 15px;
+    }
+    span{
+        position: absolute;
+        right: 0;
+        top: 13px;
+        padding-right: 8px;
+        right: 14px;
+
+       button{
+           background-color: transparent;
+       }
+
+       i.fas{
+           color: $lighter_gray;
+       }
+    }
+}
 
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $dark_gray;
     opacity: 1;
     position: absolute;
-    left: 70px;
-    top: 0px;
+    left: 20px;
+    top: 11px;
     /* Firefox */
 }
 
@@ -456,11 +509,30 @@ input.search_box{
         box-sizing: border-box;
         font-family: 'Montserrat', sans-serif;
     }
+
+    .search_form_box {
+        position: relative;
+
+        span {
+            padding-left: 60px;
+            top: 16px;
+        }
+    }
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $dark_gray;
+        opacity: 1;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        /* Firefox */
+    }
     h1.head{
         font-size: 2em;
         color: $dark_gray;
         padding: 10px;
     }
+    
     .form_select {
         
         .select_field {
@@ -485,19 +557,15 @@ input.search_box{
             }
         }
 
-        .button_field{
-        }
+        
     }
 
-    .business_card {
-        padding: 15px 0;
-        display: grid;
-        margin: 5px;
-        justify-content: space-around;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: minmax(250px auto);
+    .business_card { 
+        grid-template-columns: auto auto;
+        grid-template-rows: auto; //minmax(250px auto);
        
     }
+    
      .select_group {
          display: flex;
          div {
